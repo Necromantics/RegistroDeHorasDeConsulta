@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="REGISTROModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CONSULTAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NUMERO_SEMANA" Type="int" Nullable="false" />
+          <Property Name="CANTIDAD_ESTUDIANTE" Type="int" Nullable="false" />
+          <Property Name="TIPO_CONSULTA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TEMA_CONSULTA" Type="varchar" MaxLength="100" />
+          <Property Name="FECHA" Type="datetime" Nullable="false" />
+          <Property Name="CARNET_ESTUDIANTE" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="OBSERVACIONES" Type="varchar" MaxLength="200" />
+          <Property Name="APROBACION" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="REGISTROModelStoreContainer">
+          <EntitySet Name="CONSULTAS" EntityType="Self.CONSULTAS" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="REGISTROModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CONSULTAS">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NUMERO_SEMANA" Type="Int32" Nullable="false" />
+          <Property Name="CANTIDAD_ESTUDIANTE" Type="Int32" Nullable="false" />
+          <Property Name="TIPO_CONSULTA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TEMA_CONSULTA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CARNET_ESTUDIANTE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OBSERVACIONES" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="APROBACION" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="REGISTROEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CONSULTAS" EntityType="Self.CONSULTAS" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="REGISTROModelStoreContainer" CdmEntityContainer="REGISTROEntities">
+          <EntitySetMapping Name="CONSULTAS">
+            <EntityTypeMapping TypeName="REGISTROModel.CONSULTAS">
+              <MappingFragment StoreEntitySet="CONSULTAS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="NUMERO_SEMANA" ColumnName="NUMERO_SEMANA" />
+                <ScalarProperty Name="CANTIDAD_ESTUDIANTE" ColumnName="CANTIDAD_ESTUDIANTE" />
+                <ScalarProperty Name="TIPO_CONSULTA" ColumnName="TIPO_CONSULTA" />
+                <ScalarProperty Name="TEMA_CONSULTA" ColumnName="TEMA_CONSULTA" />
+                <ScalarProperty Name="FECHA" ColumnName="FECHA" />
+                <ScalarProperty Name="CARNET_ESTUDIANTE" ColumnName="CARNET_ESTUDIANTE" />
+                <ScalarProperty Name="OBSERVACIONES" ColumnName="OBSERVACIONES" />
+                <ScalarProperty Name="APROBACION" ColumnName="APROBACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
